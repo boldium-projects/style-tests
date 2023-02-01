@@ -1,8 +1,8 @@
 const {parsePxInt} = require('../../modules/pixels');
 
-const testsLocation = process.env.TESTS_LOCATION || 'style.tests'
-const URLTESTS = require('../../'+ testsLocation);
-URLTESTS.forEach(test => {
+const testsLocation = process.env.TESTS_LOCATION || 'style.tests.json'
+const {tests} = require('../../'+ testsLocation);
+tests.forEach(test => {
 	describe(test.name, () => {
 		it(test.name + ' passes', () => {
 			if (test.viewport) {
