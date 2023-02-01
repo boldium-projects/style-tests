@@ -1,0 +1,72 @@
+{
+    "$schema":  "http://json-schema.org/schema",
+    "$id": "https://example.com/product.schema.json",
+    "title": "Style Tests",
+    "description": "A list of tests for css styles",
+    "type": "object",
+    "properties": {
+        "tests": {
+            "description": "An array of of test objects",
+            "items": {
+                "type": "object"
+            },
+            "required": [ "name", "url", "styles" ],
+            "properties": {
+                "name": {
+                    "description": "The name of the test",
+                    "type": "string"
+                },
+                "url": {
+                    "description": "The url you want tested",
+                    "type": "string"
+                },
+                "viewport": {
+                    "description": "The viewport size you want tested",
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    },
+                    "minItems": 1,
+                    "maxItems": 2
+                },
+                "styles": {
+                    "description": "Thde styles you want tested",
+                    "type": "array",
+                    "items": {
+                        "type": "object"
+                    },
+                    "required": [ "description", "selector", "rules" ],
+                    "properties": {
+                        "description": {
+                            "description": "A note to the human what this test is for",
+                            "type": "string"
+                        },
+                        "selector": {
+                            "description": "The selector you want tested, first match is used",
+                            "type": "string"
+                        },
+                        "rules": {
+                            "description": "The style rules you want tested",
+                            "type": "object",
+                            "required": [ "property", "value" ],
+                            "properties": {
+                                "property": {
+                                    "description": "The property you want tested",
+                                    "type": "string"
+                                },
+                                "value": {
+                                    "description": "The value you want tested, currently we only support px units",
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "type": "array"
+        }
+    },
+    "required": [
+        "tests"
+    ]
+}

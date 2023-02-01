@@ -18,8 +18,9 @@ tests.forEach(test => {
 			test.styles.forEach(styleSet => {
 				if (styleSet.selector) {
 					const elementToTest = cy.get(styleSet.selector).first();
-					for (const attribute in styleSet.rules) {
-						const value = styleSet.rules[attribute];
+					styleSet.rules.forEach(rule => {
+						const attribute = rule.property;
+						const value = rule.value;
 						const valueInt = parsePxInt(value);
 						// if a number is over 60px (magic number that seems big enough), 
 						// we won't care about fractional pixels
@@ -33,7 +34,7 @@ tests.forEach(test => {
 						} else {
 							elementToTest.should('have.css', attribute, value)
 						}
-					}
+					})
 				}
 			})
 		})
