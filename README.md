@@ -22,7 +22,7 @@ Add a file named `style.test.json` to the root of the projects.
 Add an array called `tests`, then add an object with:
 - a `name` that escribes this collection style tests
 - a `url` which is the url you want tested
-- and a `viewpot` array with 2 numbers, the width and height of our viewport
+- and a `viewport` array with 2 numbers, the width and height of our viewport
 
 Example:
 

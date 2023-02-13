@@ -26,8 +26,8 @@ STYLETESTS.tests.forEach(test => {
 						// we won't care about fractional pixels
 						// for example, if the test valueInt is 72.2px
 						// we just want to make sure it's between 72px and 73px
-						const shouldRoundFranctionalPixels = valueInt && valueInt > 60;
-						if (shouldRoundFranctionalPixels) {
+						const shouldRoundFractionalPixels = valueInt && valueInt > 60;
+						if (shouldRoundFractionalPixels) {
 							const least = Math.floor(valueInt);
 							const most = Math.floor((valueInt + 1));
 							elementToTest.invoke(attribute).should('be.least', least).and('be.most', most);
