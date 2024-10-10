@@ -9,7 +9,7 @@ This makes it easy to test styles on sites just by configuring a json file.
 ## Adding tests
 
 ### Add a style.tests.json
-Add a file named `style.test.json` to the root of the projects.
+Add a file named `style.tests.json` to the root of the projects.
 
 ### add the schema to the tests json
 ```
@@ -76,6 +76,6 @@ Now we're going to add an array of objects called styles to our test, where each
 ## Runing test
 
 1. In the terminal, enter `npm start`
-2. Click E2E Testing
-3. Click Click Chrome
-4. Click style-test.cy.js
+2. Click `E2E Testing`
+3. Click `Chrome`
+4. Click `style-test.cy.js`
